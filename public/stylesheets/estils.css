@@ -11,11 +11,13 @@ nav li a:hover {
   z-index: 1;
 }
 
-.fondo h3, .fondo h4 {
-  z-index: 10;
-  opacity: 1;
-}
-
 .cabe {
   margin: 2em;
+}
+
+.fondogris {
+  margin-top: 2em;
+  background-color:#ccc;
+  height: 450px;
+  border-radius: 5px;
 }
