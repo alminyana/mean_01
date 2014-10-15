@@ -1,11 +1,56 @@
-<div class="row">
-  <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 fondo">
-    <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11 cabe">
+<div class="container">
+  <div class="row">
+    <section class="hidden-xs col-sm-1 col-md-1 col-lg-1 lateral">
+      <ul class="list list-unstyled">
+        <li><a href="">uno</a></li>
+        <li><a href="">dos</a></li>
+      </ul>
+    </section>
+    <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 fondo">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 cabe">
+        <div class="lista">
 
-      <button class="btn btn-danger btn-lg btn-block">{{title}}</button>
+          <div class="dentrolista">
+            <h3 class="text-primary text-center"><span class="label label-primary">Nueva Llista</span></h3>
+            <form action="" ng-submit="">
+              Nombre<br/>
+              <div class="input-group">
+                <input type="text" placeholder="Nombre de la Lista" class="form-control" ng-model="nombre">
+                <span class="input-group-btn">
+                  <button class="btn btn-success" type="button">Guardar</button>
+                </span>
+              </div>
+              Artículo<br/>
+              <div class="input-group">
+                <input type="text" placeholder="Nombre del producto" class="form-control" ng-model="producto">
+                <span class="input-group-btn">
+                  <button class="btn btn-success" type="button">Añadir</button>
+                </span>
+              </div>
+              <div class="input-group center-block">
+                <ul class="nav nav-pills nav-stacked">
+                  <li class="active">
+                    <a href="#">
+                      <span class="badge pull-right">03</span>
+                      <span class="badge2">Artículos añadidos</span>
+                    </a>
+                  </li>
+                  ...
+                </ul>
+              </div>
+              <div class="margen-superior">
+                <button type="submit" class="btn btn-primary btn-default btn-block">{{title}}</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+
+      </div>
     </div>
-  </div>
-  <div class="col-xs-5 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1 fondogris">
+    <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 fondogris">
 
+    </div>
   </div>
 </div>
