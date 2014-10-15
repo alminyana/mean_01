@@ -7,15 +7,15 @@
   <link rel="stylesheet" href="stylesheets/estils.css">
 </head>
 <body ng-app="app">
-  <div class="container" ng-controller="HomeCtrl">
+  <div class="container">
     <div class="page-header" ng-controller="">
         <h1 class="text-danger">Mean Stack Web App</h1>
     </div>
     <div>
       <ul id="tab" class="nav nav-tabs" role="tablist">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Messages</a></li>
+        <li class="active"><a class="menu" href="#">Home</a></li>
+        <li><a class="menu" href="#">Profile</a></li>
+        <li><a class="menu" href="#">Messages</a></li>
       </ul>
     </div>
   </div>
@@ -32,6 +32,13 @@
   <!-- angular-route -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.11/angular-ui-router.min.js"></script>
   <script src="javascripts/core.js"></script>
-
+  <script>
+    $(document).ready(function(){
+      $('#tab li').click(function(){
+        $('#tab li').removeClass('active');
+        $(this).addClass('active');
+      });
+    });
+  </script>
 </body>
 </html>
