@@ -8,15 +8,30 @@
 </head>
 <body ng-app="app">
   <div class="container" ng-controller="HomeCtrl">
-    <div class="page-header">
-      <h1 class="text-danger">Mean Stack Web App</h1>
+    <div class="page-header" ng-controller="">
+        <h1 class="text-danger">Mean Stack Web App</h1>
+    </div>
+    <div>
+      <ul id="tab" class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Messages</a></li>
+      </ul>
     </div>
   </div>
+  <div class="container">
+    <div ng-view></div>
+  </div>
+
   <!-- angularjs -->
-  <script src="javascripts/lib/angular.min.js"></script>
-  <!-- angular-route -->
-  <script src="javascripts/lib/angular-route.min.js"></script>
+  <script src="./javascripts/lib/angular.min.js"></script>
   <!-- JQuery -->
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <!-- angular-route -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.11/angular-ui-router.min.js"></script>
+  <script src="javascripts/core.js"></script>
+
 </body>
 </html>
