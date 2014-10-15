@@ -1,4 +1,5 @@
-angular.module('app')
-  .controller('HomeCtrl', ['$scope', function($scope){
-    $scope.texto = "vamoos hostia";
+angular
+  .module('app')
+  .controller('homeCtrl', ['$scope', function($scope) {
+    $scope.title = "Home";
   }]);

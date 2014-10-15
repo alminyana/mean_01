@@ -11,15 +11,13 @@
     <div class="page-header">
         <h1 class="text-danger">Mean Stack Web App</h1>
     </div>
-    <div>
       <nav>
         <ul id="tab" class="nav nav-tabs" role="tablist">
           <li class="active"><a class="menu" href="/">Home</a></li>
-          <li><a class="menu" href="#">Profile</a></li>
-          <li><a class="menu" href="#">Messages</a></li>
+          <li><a class="menu" href="#/newlist">Crear Lista</a></li>
+          <li><a class="menu" href="#">Otro</a></li>
         </ul>
       </nav>
-    </div>
   </div>
   <div class="container">
     <div ui-view></div>
@@ -34,9 +32,11 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
   <!-- angular ui.route -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
-  <!-- core and scripts -->
+  <!-- core, controllers and scripts -->
   <script src="./javascripts/app.js"></script>
   <script src="./javascripts/scripts.js"></script>
+  <script src="./javascripts/controllers/homeCtrl.js"></script>
+  <script src="./javascripts/controllers/newlistCtrl.js"></script>
 
 </body>
 </html>

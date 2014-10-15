@@ -8,6 +8,12 @@ angular
     $stateProvider
         .state('home', {
           url: '/',
-          templateUrl: './templates/home.html'
+          templateUrl: './templates/home.html',
+          controller: 'homeCtrl'
+        })
+        .state('newlist', {
+          url: '/newlist',
+          templateUrl: './templates/newlist.html',
+          controller: 'newlistCtrl'
         });
   }]);
