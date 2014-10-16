@@ -11,36 +11,39 @@
         <div class="lista">
 
           <div class="dentrolista">
-            <h3 class="text-primary text-center"><span class="label label-primary">Nueva Llista</span></h3>
+            <h3 class="text-primary text-center"><span class="label label-primary">{{titleGuardar}}</span></h3>
             <form action="" ng-submit="">
-              Nombre<br/>
+              <strong>Nombre</strong><br/>
               <div class="input-group">
                 <input type="text" placeholder="Nombre de la Lista" class="form-control" ng-model="nombre">
                 <span class="input-group-btn">
-                  <button class="btn btn-success" type="button">Guardar</button>
+                  <button class="btn btn-success" type="button" ng-click="afegir()">Guardar</button>
                 </span>
               </div>
-              Artículo<br/>
+              <strong>Artículo</strong><br/>
               <div class="input-group">
-                <input type="text" placeholder="Nombre del producto" class="form-control" ng-model="producto">
+                <input id="inputradius" type="number" placeholder="Num unidades" class="form-control" ng-model="unid">
                 <span class="input-group-btn">
-                  <button class="btn btn-success" type="button">Añadir</button>
+                  <button class="btn btn-default" type="button" disabled>Unidades</button> </span>
+              </div>
+              <div class="input-group">
+
+                <input type="text" placeholder="Nombre del producto" class="form-control" ng-model="nombreProd">
+                <span class="input-group-btn">
+                  <button class="btn btn-success" type="button" ng-click="afegirProd($index)">Añadir</button>
                 </span>
               </div>
               <div class="input-group center-block">
                 <ul class="nav nav-pills nav-stacked">
                   <li class="active">
-                    <a href="#">
-                      <span class="badge pull-right">03</span>
+                    <a>
+                      <span class="badge pull-right">{{numeroItems}}</span>
                       <span class="badge2">Artículos añadidos</span>
                     </a>
                   </li>
-                  ...
                 </ul>
               </div>
-              <div class="margen-superior">
-                <button type="submit" class="btn btn-primary btn-default btn-block">{{title}}</button>
-              </div>
+
 
             </form>
           </div>
@@ -50,7 +53,30 @@
       </div>
     </div>
     <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 fondogris">
-
+        <div class="page-header" ng-show="nuevoTitulo">
+          <h2 class="text-danger text-centered"><small>Lista</small> {{nuevoTitulo}}</h2>
+        </div>
+        <div ng-show="items[0].nombre">
+          <table class="table table-responsive table-hover">
+            <thead>
+              <tr>
+                <td>Nombre</td>
+                <td>Cantidad</td>
+                <td>Check</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="item in items">
+                <td>{{item.nombre}} : {{item.id}}</td>
+                <td>{{item.unid}}</td>
+                <td><button class="btn btn-xs btn-danger">Borrar</button></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="margen-superior" ng-show="false">
+            <button type="submit" class="btn btn-primary btn-default btn-block">Guardar</button>
+          </div>
+        </div>
     </div>
   </div>
 </div>
