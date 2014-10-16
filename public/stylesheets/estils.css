@@ -32,10 +32,8 @@ section.lateral {
 .fondogris {
   margin-left:  2em;
   margin-top: 2em;
-
   height: 100%;
   border-radius: 5px;
-  z-index: 1;
 }
 
 div.lista {
