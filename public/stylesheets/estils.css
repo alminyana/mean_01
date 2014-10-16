@@ -63,6 +63,11 @@ span button {
   width: 100px;
 }
 
+#btn_guardar {
+  width: 80%;
+  margin: 1em;
+}
+
 span.label {
   padding: .8 1.5em .8 1.5em;
 }
