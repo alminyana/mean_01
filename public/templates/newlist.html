@@ -12,7 +12,6 @@
 
           <div class="dentrolista">
             <h3 class="text-primary text-center"><span class="label label-primary">{{titleGuardar}}</span></h3>
-            <form action="" ng-submit="">
               <strong>Nombre</strong><br/>
               <div class="input-group">
                 <input type="text" placeholder="Nombre de la Lista" class="form-control" ng-model="nombre">
@@ -44,8 +43,6 @@
                 </ul>
               </div>
 
-
-            </form>
           </div>
         </div>
 
@@ -53,30 +50,35 @@
       </div>
     </div>
     <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 fondogris">
-        <div class="page-header" ng-show="nuevoTitulo">
-          <h2 class="text-danger text-centered"><small>Lista</small> {{nuevoTitulo}}</h2>
-        </div>
-        <div ng-show="items[0].nombre">
-          <table class="table table-responsive table-hover">
-            <thead>
-              <tr>
-                <td>Nombre</td>
-                <td>Cantidad</td>
-                <td>Check</td>
-              </tr>
-            </thead>
-            <tbody>
-              <tr ng-repeat="item in items">
-                <td>{{item.nombre}} : {{item.id}}</td>
-                <td>{{item.unid}}</td>
-                <td><button class="btn btn-xs btn-danger">Borrar</button></td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="margen-superior" ng-show="false">
-            <button type="submit" class="btn btn-primary btn-default btn-block">Guardar</button>
+        <div class="panel panel-primary margen-superior" ng-show="nuevoTitulo">
+          <div class="panel-heading">
+            <h4 class="text-centered">{{nuevoTitulo}}</h4>
           </div>
+          <br/>
+          <div ng-show="items[0].nombre">
+            <table class="table table-responsive table-hover">
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Cantidad</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="item in items">
+                  <td>{{item.nombre}} : {{$index}}</td>
+                  <td>{{item.unid}}</td>
+                  <td><button class="btn btn-xs btn-danger" ng-click="eliminar($index)">Borrar</button></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="margen-superior" ng-show="false">
+              <button type="submit" class="btn btn-primary btn-default btn-block">Guardar</button>
+            </div>
+          </div>
+
         </div>
+
     </div>
   </div>
 </div>

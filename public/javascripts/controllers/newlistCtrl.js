@@ -5,7 +5,6 @@ angular
     $scope.title = "Nueva Lista";
     var items = [];
     $scope.items = items;
-    $scope.numeroItems = $scope.items.length;
     $scope.afegir = function() {
        $scope.nuevoTitulo = $scope.nombre;
     };
@@ -19,6 +18,11 @@ angular
       console.log(items);
       $scope.nombreProd = '';
       $scope.unid = 1;
+      $scope.numeroItems = $scope.items.length;
     };
-
+    $scope.eliminar = function(id) {
+      items.splice(id, 1);
+      $scope.numeroItems = $scope.items.length;
+    }
+    $scope.numeroItems = items.length;
   }]);
