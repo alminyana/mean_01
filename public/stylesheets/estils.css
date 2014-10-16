@@ -14,7 +14,7 @@ nav li a:hover {
 .fondo {
   margin-top: 2em;
   background: url('../img/supermercadoreb.jpg') no-repeat center;
-  height: 450px;
+  height: 360px;
   border-radius: 5px;
   z-index: 1;
 }
@@ -74,4 +74,19 @@ span.badge2 {
 }
 #inputradius {
   border-radius: 4px;
+}
+
+/* ---------------------    template todas listas.htmml */
+
+.todaslistas {
+  margin: 1em;
+  padding: 1em;
+  width: 200px;
+  border-radius: 5px;
+  border: solid black 1px;
+  list-style: none;
+}
+
+.todaslistas li {
+
 }

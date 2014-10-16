@@ -34,7 +34,7 @@ angular
       console.log(lista);
       $http.post('/servicioListas', lista)
         .success(function(response) {
-            console.log(response);
+            //console.log(response);
         });
     }
 

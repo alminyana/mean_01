@@ -17,9 +17,7 @@ app.use(express.static(__dirname + '/public'));
 //utilizar bodyParser para parsear los json de request i response
 app.use(bodyParser.json());
 
-
-
-//app.post('/servicioListas', routes.guardarLista);
+app.get('/servicioListas', routes.todasListas);
 app.post('/servicioListas', routes.guardarLista);
 
 

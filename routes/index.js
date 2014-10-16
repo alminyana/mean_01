@@ -5,8 +5,14 @@ var db = mongojs('localhost/listacompra',['listas']);
 
 exports.guardarLista = function(req, res) {
   var lista = req.body;
-  console.log(lista);
+  //console.log(lista);
   db.listas.insert(lista, function(err,doc){
 		res.json(doc);
 	});
+}
+
+exports.todasListas = function (req, res) {
+  db.listas.find(function(err, docs) {
+    res.json(docs);
+  });
 }

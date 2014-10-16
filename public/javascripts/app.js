@@ -15,5 +15,10 @@ angular
           url: '/newlist',
           templateUrl: './templates/newlist.html',
           controller: 'newlistCtrl'
+        })
+        .state('todas', {
+          url: '/todas',
+          templateUrl: './templates/todas.html',
+          controller: 'todasCtrl'
         });
   }]);
