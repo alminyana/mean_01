@@ -14,13 +14,14 @@
     </div>
       <nav>
         <ul id="tab" class="nav nav-tabs" role="tablist">
-          <li class="/"><a href="/">Inicio</a></li>
-          <li class="newlist"><a href="#/newlist">Crear Lista</a></li>
-          <li><a class="todas" href="#/todas">Ver Listas</a></li>
+          <li id="uno"><a href="/">Inicio</a></li>
+          <li id="dos"><a href="#/newlist">Crear Lista</a></li>
+          <li id="tres"><a href="#/todas">Ver Listas</a></li>
         </ul>
       </nav>
   </div>
   <div class="container">
+    <h3 class="text-info">{{title}}</h3>
     <div ui-view></div>
   </div>
 
