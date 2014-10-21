@@ -17,8 +17,8 @@ angular
     //obtener el id seleccionado
     $scope.listaSeleccionada = $stateParams.lista;
     //obtener la lista del array de listas
-    $scope.obtenerUna = function (id){
-      console.log($scope.listaDeListas);
+    $scope.obtenerUna = function (id) {
+      //console.log($scope.listaDeListas);
       angular.forEach($scope.listaDeListas, function(value, key) {
         //console.log(value);
         //console.log(value._id);

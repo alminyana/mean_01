@@ -25,5 +25,10 @@ angular
           url: '/:lista',
           templateUrl: './templates/una.html',
           controller: 'todasCtrl'
+        })
+        .state('todas.edit', {
+          url: '/edit/:lista',
+          templateUrl: './templates/editUna.html',
+          controller: 'todasCtrl'
         });
   }]);
