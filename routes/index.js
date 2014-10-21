@@ -13,6 +13,7 @@ exports.guardarLista = function(req, res) {
 
 exports.todasListas = function (req, res) {
   db.listas.find(function(err, docs) {
+    console.log(docs);
     res.json(docs);
   });
 }

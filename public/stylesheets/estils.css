@@ -82,6 +82,10 @@ span.badge2 {
   margin: 1em;
   padding: 1em;
   width: 200px;
+  height: 110px;
+  overflow:auto; /* Escondemos la parte sobrante */
+  white-space:nowrap; /* Indicamos que no realice salto de linea si no cabe en la anchura indicada */
+  text-overflow: ellipsis;
   border-radius: 5px;
   border: solid black 1px;
   list-style: none;

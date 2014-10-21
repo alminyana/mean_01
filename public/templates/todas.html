@@ -2,13 +2,20 @@
   <h2 class="text-danger">{{title}}</h2>
   <br/>
 </div>
-
 <div class="container">
-  <ul class="todaslistas pull-left" ng-repeat="lista in listaDeListas">
-    <li>Titulo: <strong>{{lista.titulo}}</strong></li>
-      Ingredientes:
-      <ul>
-        <li class="list list-unstyled" ng-repeat="it in lista.items">{{it.nombre}}</li>
-      </ul>
-  </ul>
+  <div class="col-xs-10 col-sm-6 col-md-4 col-lg-4 barra-lateral">
+      <div class="panel panel-primary" ng-repeat="lista in listaDeListas">
+        <div class="panel-heading" ng-click="saludo(lista._id)">
+          {{lista.titulo}}
+        </div>
+        <div class="panel-body">
+          {{lista.items.length}} elementos<br/>
+          <strong>ID</strong> {{lista._id}}<br/><br/>
+          <a ng-href="#/todas/{{lista._id}}" class="btn btn-default" ng-click="obtenerUna(lista._id)">ver</a>
+          <a href="#" class="btn btn-default">Editar</a>
+          <a href="#" class="btn btn-default">Eliminar</a>
+        </div>
+      </div>
+  </div>
+  <div class="col-xs-10 col-sm-5 col-sm-offset-1 col-md-7 col-md-offset-1 col-lg-7 col-lg-offset-1" ui-view></div>
 </div>

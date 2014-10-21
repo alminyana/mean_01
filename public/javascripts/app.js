@@ -20,5 +20,10 @@ angular
           url: '/todas',
           templateUrl: './templates/todas.html',
           controller: 'todasCtrl'
+        })
+        .state('todas.lista', {
+          url: '/:lista',
+          templateUrl: './templates/una.html',
+          controller: 'todasCtrl'
         });
   }]);
