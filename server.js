@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 
 app.get('/servicioListas', routes.todasListas);
 app.post('/servicioListas', routes.guardarLista);
-
+app.delete('/servicioListas/:id', routes.borrarLista);
 
 
 

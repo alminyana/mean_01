@@ -17,3 +17,11 @@ exports.todasListas = function (req, res) {
     res.json(docs);
   });
 }
+
+exports.borrarLista = function (req, res) {
+  var id = req.params.id;
+  //console.log(id);
+  db.listas.remove({_id: mongojs.ObjectId(id)}, function (err, docs){
+    res.json(docs);
+  });
+}

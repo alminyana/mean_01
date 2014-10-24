@@ -1,6 +1,6 @@
 angular
   .module('app')
-  .controller('newlistCtrl', ['$scope', '$http', function($scope, $http) {
+  .controller('newlistCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
     $scope.unid = 1;
     $scope.title = "Nueva Lista";
     var items = [];
@@ -35,6 +35,7 @@ angular
       $http.post('/servicioListas', lista)
         .success(function(response) {
             //console.log(response);
+            $location.path('/todas').replace();
         });
     }
 

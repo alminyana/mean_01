@@ -16,17 +16,17 @@ angular
           templateUrl: './templates/newlist.html',
           controller: 'newlistCtrl'
         })
-        .state('todas', {
+        .state('todas', { //todas las listas
           url: '/todas',
           templateUrl: './templates/todas.html',
           controller: 'todasCtrl'
         })
-        .state('todas.lista', {
+        .state('todas.lista', { //ver una lista seleccionada
           url: '/:lista',
           templateUrl: './templates/una.html',
           controller: 'todasCtrl'
         })
-        .state('todas.edit', {
+        .state('todas.edit', {  //editar una lista seleccionada
           url: '/edit/:lista',
           templateUrl: './templates/editUna.html',
           controller: 'todasCtrl'

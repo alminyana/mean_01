@@ -9,11 +9,12 @@
           {{lista.titulo}}
         </div>
         <div class="panel-body">
-          {{lista.items.length}} elementos<br/>
+          {{lista.items.length}} elementos en lista<br/>
           <strong>ID</strong> {{lista._id}}<br/><br/>
           <a ng-href="#/todas/{{lista._id}}" class="btn btn-default" ng-click="obtenerUna(lista._id)">ver</a>
           <a ng-href="#/todas/edit/{{lista._id}}" class="btn btn-default" ng-click="obtenerUna(lista._id)">Editar</a>
-          <a href="#" class="btn btn-default">Eliminar</a>
+          <a href="#" class="btn btn-default" ng-click="borrar(lista._id)">Eliminar</a>
+
         </div>
       </div>
   </div>

@@ -16,7 +16,8 @@ angular
     };
     //obtener el id seleccionado
     $scope.listaSeleccionada = $stateParams.lista;
-    //obtener la lista del array de listas
+
+    //obtener la lista del array de listas ya leido por metodo obtenerTodas()
     $scope.obtenerUna = function (id) {
       //console.log($scope.listaDeListas);
       angular.forEach($scope.listaDeListas, function(value, key) {
@@ -28,5 +29,15 @@ angular
         return $scope.objeto;
       });
     };
+
+    $scope.borrar = function(id) {
+      $http.delete('/servicioListas/'+id)
+        .success(function (response){
+          Rscope.obtenerTodas();
+        });
+      console.log(id);
+    }
+
+
     $scope.obtenerTodas();
   }]);
