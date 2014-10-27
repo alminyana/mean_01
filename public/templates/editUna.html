@@ -4,7 +4,7 @@
     <div class="panel-heading">
       <br/>
       <div class="input-group">
-      <input class="form-control" type="text" ng-model="objeto.titulo">
+      <input class="form-control" type="text" ng-model="selec.titulo">
       <span class="input-group-btn">
         <button class="btn btn-success" type="button">Editar</button>
       </span>
@@ -17,7 +17,7 @@
           <th>Cantidad</th>
           <th>&nbsp;</th>
         </thead>
-        <tbody ng-repeat="item in objeto.items">
+        <tbody ng-repeat="item in selec.items">
           <td><input class="form-control" type="text" ng-model="item.nombre"></td>
           <td><input class="form-control" type="number" ng-model="item.unid"></td>
           <td><button class="btn btn-success">Editar</button></td>

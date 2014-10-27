@@ -14,13 +14,18 @@ var routes = require ('./routes');
 
 //asignar directorio estático apuntando a public
 app.use(express.static(__dirname + '/public'));
+
+//rutas http
 //utilizar bodyParser para parsear los json de request i response
 app.use(bodyParser.json());
-
+//obtner todas las listas de la BD
 app.get('/servicioListas', routes.todasListas);
+//guardar una lista en BD
 app.post('/servicioListas', routes.guardarLista);
+//eliminar una lista (:id) de la BD
 app.delete('/servicioListas/:id', routes.borrarLista);
-
+//seleccionar una lista de la BD
+app.get('/servicioListas/:id', routes.selectLista);
 
 
 //testing

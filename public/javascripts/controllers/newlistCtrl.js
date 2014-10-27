@@ -8,6 +8,7 @@ angular
     $scope.afegir = function() {
        $scope.nuevoTitulo = $scope.nombre;
     };
+    //añadir producto a la lista en memoria
     $scope.afegirProd = function() {
       var objeto = {
         nombre: $scope.nombreProd,
@@ -19,6 +20,7 @@ angular
       $scope.unid = 1;
       $scope.numeroItems = $scope.items.length;
     };
+    //eliminar la lista seleccionada
     $scope.eliminar = function(id) {
       items.splice(id, 1);
       $scope.numeroItems = $scope.items.length;

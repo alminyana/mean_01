@@ -25,3 +25,12 @@ exports.borrarLista = function (req, res) {
     res.json(docs);
   });
 }
+
+exports.selectLista = function (req, res) {
+  var iden = req.params.id;
+  console.log(iden);
+  db.listas.findOne({_id: mongojs.ObjectId(iden)}, function (err, docs) {
+    res.json(docs);
+    //console.log(docs);
+  });
+}
