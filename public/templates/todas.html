@@ -1,22 +1,24 @@
 <div class="container">
-  <h2 id="title" class="text-danger">Listas BD</h2>
-  <br/>
-</div>
-<div class="container">
-  <div class="barra-lateral" ng-show="!selec">
-      <div class="panel panel-primary" ng-repeat="lista in listaDeListas">
-        <div class="panel-heading" ng-click="saludo(lista._id)">
-          {{lista.titulo}}
-        </div>
-        <div class="panel-body">
-          {{lista.items.length}} elementos en lista<br/>
-          <strong>ID</strong> {{lista._id}}<br/><br/>
-          <a ng-href="#/todas/{{lista._id}}" class="btn btn-default" ng-click="obtenerUna(lista._id)">ver</a>
-          <a ng-href="#/todas/edit/{{lista._id}}" class="btn btn-default" ng-click="obtenerUna(lista._id)">Editar</a>
-          <a href="#" class="btn btn-default" ng-click="borrar(lista._id)">Eliminar</a>
-
-        </div>
-      </div>
+  <div class="page-header">
+    <h3 id="title" class="text-danger">Mis Listas</h3>
   </div>
-  <div class="col-xs-12" ui-view></div>
+  <div class="col-xs-12 col-sm-4">
+
+    <div class="barra-lateral">
+        <div class="panel panel-primary" ng-repeat="lista in listaDeListas">
+          <div class="panel-heading" ng-click="saludo(lista._id)">
+            {{lista.titulo}}
+          </div>
+          <div class="panel-body">
+            {{lista.items.length}} elementos en lista<br/>
+            <strong>ID</strong> {{lista._id}} <br/><br/>
+            <a ng-href="#/todas/{{lista._id}}" class="btn btn-default" ng-click="obtenerUna(lista._id)">ver</a>
+            <a ng-href="#/todas/edit/{{lista._id}}" class="btn btn-default" ng-click="obtenerUna(lista._id)">Editar</a>
+            <a href="#" class="btn btn-default" ng-click="borrar(lista._id)">Eliminar</a>
+
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-8" ui-view></div>
 </div>

@@ -1,8 +1,8 @@
 <div class="well">
-  <button class="btn btn-danger btn-block" ng-click="cerrarLista()">Cerrar</button>
+  <button id="close" class="btn btn-default pull-right" ng-click="cerrarLista()"><strong>X</strong></button>
   <div class="panel panel-success">
     <div class="panel-heading">
-      <h3 class="text-danger">Listas actuales</h3>
+      <h3 class="text-danger">{{selec.titulo}}</h3>
     </div>
     <div class="panel-body">
       <table class="table table-hover">

@@ -1,7 +1,6 @@
 angular
   .module('app')
-  .controller('todasCtrl', ['$scope', '$http', '$stateParams', '$location', function($scope, $http, $stateParams, $location) {
-
+  .controller('todasCtrl', ['$scope', '$http', '$stateParams', '$location', '$state', function($scope, $http, $stateParams, $location, $state) {
     $scope.renderListasResponse = function(response) {
       $scope.listaDeListas = response;
       //console.log(response);
@@ -19,7 +18,6 @@ angular
     //obtener lista de la bd con el id de lista seleccionada
 
     $scope.obtenerUna = function (id) {
-
       $http.get('/servicioListas/'+id)
         .success(function (response) {
           //console.log(response);
@@ -50,16 +48,18 @@ angular
     };
     //guardar cambios de una lista
     $scope.guardarCanvis = function (id) {
-      console.log(id);
+      //console.log(id);
+
       $location.path('/todas').replace();
       window.location.reload();
-    }
+    };
 
     $scope.cerrarLista = function() {
-      window.location.reload();
-      $location.path('/todas').replace();
-
-    }
+      //window.location.reload();
+      //$location.path('/todas').replace();
+      $state.go('todas',{reload: true});
+      //window.location.reload();
+    };
 
 
 

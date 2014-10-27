@@ -78,6 +78,7 @@ span.badge2 {
   border-radius: 4px;
 }
 
+
 /* ---------------------    template todas listas.htmml */
 
 .todaslistas {
@@ -95,4 +96,11 @@ span.badge2 {
 
 .todaslistas li {
 
+}
+
+
+/* ------------------------------------- template una lista.html*/
+
+#close {
+  margin: .5em;
 }
