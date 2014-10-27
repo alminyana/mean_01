@@ -1,9 +1,9 @@
 <div class="container">
-  <h2 class="text-danger">{{title}}</h2>
+  <h2 id="title" class="text-danger">Listas BD</h2>
   <br/>
 </div>
 <div class="container">
-  <div class="col-xs-10 col-sm-6 col-md-4 col-lg-4 barra-lateral">
+  <div class="barra-lateral" ng-show="!selec">
       <div class="panel panel-primary" ng-repeat="lista in listaDeListas">
         <div class="panel-heading" ng-click="saludo(lista._id)">
           {{lista.titulo}}
@@ -18,5 +18,5 @@
         </div>
       </div>
   </div>
-  <div class="col-xs-10 col-sm-5 col-sm-offset-1 col-md-7 col-md-offset-1 col-lg-7 col-lg-offset-1" ui-view></div>
+  <div class="col-xs-12" ui-view></div>
 </div>

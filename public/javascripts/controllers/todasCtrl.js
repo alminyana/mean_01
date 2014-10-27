@@ -1,11 +1,7 @@
 angular
   .module('app')
-  .controller('todasCtrl', ['$scope', '$http', '$stateParams', function($scope, $http, $stateParams) {
-    $scope.title = "Todas las Listas";
-    $scope.saludo = function(id) {
-      //alert('Lista de identificador: '+id);
-    }
-    $scope.kaka = 'Mensaje del controlador';
+  .controller('todasCtrl', ['$scope', '$http', '$stateParams', '$location', function($scope, $http, $stateParams, $location) {
+
     $scope.renderListasResponse = function(response) {
       $scope.listaDeListas = response;
       //console.log(response);
@@ -23,10 +19,10 @@ angular
     //obtener lista de la bd con el id de lista seleccionada
 
     $scope.obtenerUna = function (id) {
-      
+
       $http.get('/servicioListas/'+id)
         .success(function (response) {
-          console.log(response);
+          //console.log(response);
           $scope.selec = response;
         });
     };
@@ -52,6 +48,19 @@ angular
         });
       //console.log(id);
     };
+    //guardar cambios de una lista
+    $scope.guardarCanvis = function (id) {
+      console.log(id);
+      $location.path('/todas').replace();
+      window.location.reload();
+    }
+
+    $scope.cerrarLista = function() {
+      window.location.reload();
+      $location.path('/todas').replace();
+
+    }
+
 
 
     $scope.obtenerTodas();

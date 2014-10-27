@@ -1,4 +1,5 @@
-<div class="well">
+<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+<div class=" col-xs-8 col-sm-8 col-md-8 col-lg-8 well">
   <h3 class="info">Editar</h3>
   <div class="panel panel-success">
     <div class="panel-heading">
@@ -17,12 +18,15 @@
           <th>Cantidad</th>
           <th>&nbsp;</th>
         </thead>
-        <tbody ng-repeat="item in selec.items">
-          <td><input class="form-control" type="text" ng-model="item.nombre"></td>
-          <td><input class="form-control" type="number" ng-model="item.unid"></td>
-          <td><button class="btn btn-success">Editar</button></td>
+        <tbody>
+          <tr ng-repeat="item in selec.items">
+            <td><input class="form-control" type="text" ng-model="item.nombre"></td>
+            <td><input class="form-control" type="number" ng-model="item.unid"></td>
+            <td><button class="btn btn-success">Editar</button></td>
+          </tr>
         </tbody>
       </table>
     </div>
   </div>
+  <button class="btn btn-primary btn-default form-control center-block" ng-click="guardarCanvis(selec._id)">Guardar Cambios</button>
 </div>
