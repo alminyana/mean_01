@@ -1,6 +1,8 @@
 angular
   .module('app')
   .controller('todasCtrl', ['$scope', '$http', '$stateParams', '$location', '$state', function($scope, $http, $stateParams, $location, $state) {
+
+    $scope.vistasTitulo = "Mis Listassss";
     $scope.renderListasResponse = function(response) {
       $scope.listaDeListas = response;
       //console.log(response);
@@ -39,29 +41,48 @@ angular
       });
     };
     */
+    //borrar lista de la BD
     $scope.borrar = function(id) {
       $http.delete('/servicioListas/'+id)
         .success(function (response){
           $scope.obtenerTodas();
         });
-      //console.log(id);
-    };
-    //guardar cambios de una lista
+      };
+    //guardar cambios de una lista en BD
     $scope.guardarCanvis = function (id) {
       //console.log(id);
+      var lista_para_update = {
+        titulo: $scope.selec.titulo,
+        items: $scope.selec.items
+      };
+      $http.put('/servicioListas/'+id, lista_para_update)
+        .success(function (response){
+          $scope.listaDeListas=response;
+          //$scope.obtenerTodas();
+        });
 
-      $location.path('/todas').replace();
-      window.location.reload();
+        $scope.obtenerTodas();
+        $state.go('todas',{reload: true});
+
+      //$location.path('/todas').replace();
+      //window.location.reload();
     };
-
+    //btn close en ver y editar lista
     $scope.cerrarLista = function() {
       //window.location.reload();
       //$location.path('/todas').replace();
-      $state.go('todas',{reload: true});
+      $state.go('todas',{replace: true});
       //window.location.reload();
     };
 
+    //borrar item de la lista
+    $scope.borrarProducto = function(id) {
+      $scope.selec.items.splice(id,1);
+      //console.log($scope.selec);
+    }
 
 
+
+    //obtener todas las listas de la BD
     $scope.obtenerTodas();
   }]);

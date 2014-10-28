@@ -1,15 +1,15 @@
-<div class=" col-xs-12 well">
-  <h3 class="info">Editar</h3>
-  <div class="panel panel-success">
+<div class="col-xs-12 well">
+  <div class="panel panel-info">
+    <button id="close" class="btn btn-default pull-right" ng-click="cerrarLista()"><strong>X</strong></button>
+    <div class="clear-fix"></div>
     <div class="panel-heading">
+
       <br/>
       <span class="text-default"><strong>Nombre</strong></span><br/>
       <div class="input-group">
 
-      <input class="form-control" type="text" ng-model="selec.titulo">
-      <span class="input-group-btn">
-        <button class="btn btn-success" type="button">Editar</button>
-      </span>
+      <input class="form-control input-block" size="35" type="text" ng-model="selec.titulo">
+      <br/>
     </div>
     </div>
     <div class="panel-body">
@@ -23,11 +23,11 @@
           <tr ng-repeat="item in selec.items">
             <td><input class="form-control" type="text" ng-model="item.nombre"></td>
             <td><input class="form-control" type="number" ng-model="item.unid"></td>
-            <td><button class="btn btn-success">Editar</button></td>
+            <td><button class="btn btn-danger" ng-click="borrarProducto($index)">Eliminar</button></td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
-  <button class="btn btn-primary btn-default form-control center-block" ng-click="guardarCanvis(selec._id)">Guardar Cambios</button>
+  <button class="btn btn-info btn-xs form-control center-block" ng-click="guardarCanvis(selec._id)">Guardar Cambios</button>
 </div>

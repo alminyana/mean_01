@@ -34,3 +34,17 @@ exports.selectLista = function (req, res) {
     //console.log(docs);
   });
 }
+
+exports.updateLista = function (req, res) {
+  var ide = req.params.id;
+  db.listas.update(
+    {_id: mongojs.ObjectId(ide)},
+    { $set: {
+              titulo: req.body.titulo,
+              items: req.body.items
+            }
+    },
+    function (err, docs) {
+      res.json(docs);
+    });
+}
