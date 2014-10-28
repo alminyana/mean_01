@@ -57,22 +57,16 @@ angular
       };
       $http.put('/servicioListas/'+id, lista_para_update)
         .success(function (response){
-          $scope.listaDeListas=response;
-          //$scope.obtenerTodas();
+          $scope.obtenerTodas();
         });
-
-        $scope.obtenerTodas();
-        $state.go('todas',{reload: true});
+        $state.go('todas',{},{reload: true});
 
       //$location.path('/todas').replace();
       //window.location.reload();
     };
     //btn close en ver y editar lista
     $scope.cerrarLista = function() {
-      //window.location.reload();
-      //$location.path('/todas').replace();
-      $state.go('todas',{replace: true});
-      //window.location.reload();
+      $state.go('todas',{},{reload: true});
     };
 
     //borrar item de la lista

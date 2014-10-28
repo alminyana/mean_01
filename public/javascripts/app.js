@@ -2,6 +2,9 @@ angular
   .module('app', [
       'ui.router'
   ])
+  .factory('Lista', function(){
+    
+  })
   .config(['$urlRouterProvider', '$stateProvider', '$locationProvider', function($urlRouterProvider, $stateProvider, $locationProvider){
     $urlRouterProvider.otherwise('/');
     //$locationProvider.html5Mode(true);
