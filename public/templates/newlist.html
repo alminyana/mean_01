@@ -1,8 +1,12 @@
   <div class="row">
-    <section class="hidden-xs col-sm-1 col-md-1 col-lg-1 lateral">
-      <ul class="list list-unstyled">
-        <li><a href="">uno</a></li>
-        <li><a href="">dos</a></li>
+    <section class="hidden-xs col-sm-2 col-md-2 col-lg-2 lateral">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active">
+          <a>
+            <span class="badge pull-right">{{numeroListas}}</span>
+            <span class="badge2">Listas BD</span>
+          </a>
+        </li>
       </ul>
     </section>
     <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 fondo">
@@ -48,7 +52,7 @@
 
       </div>
     </div>
-    <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 fondogris">
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 fondogris">
         <div class="panel panel-primary margen-superior" ng-show="nuevoTitulo">
           <div class="panel-heading">
             <h4 class="text-centered">{{nuevoTitulo}}</h4>

@@ -18,7 +18,6 @@ angular
     //obtener el id seleccionado
     //$scope.listaSeleccionada = $stateParams.lista;
     //obtener lista de la bd con el id de lista seleccionada
-
     $scope.obtenerUna = function (id) {
       $http.get('/servicioListas/'+id)
         .success(function (response) {

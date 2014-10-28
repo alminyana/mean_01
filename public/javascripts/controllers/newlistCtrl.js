@@ -40,6 +40,14 @@ angular
             $location.path('/todas').replace();
         });
     }
+    //numero de listas en BD
+    $scope.numeroDeListas = function () {
+      $http.get('/servicioListas')
+        .success(function(response){
+          $scope.todas = response;
+          $scope.numeroListas = $scope.todas.length;
+        });
 
-
+    }
+    $scope.numeroDeListas();
   }]);
