@@ -5,23 +5,25 @@
   <title>Index</title>
   <link rel="stylesheet" href="stylesheets/bootstrap.css">
   <link rel="stylesheet" href="stylesheets/estils.css">
+  <link rel="stylesheet" href="stylesheets/animacion.css">
+  <link rel="stylesheet" href="stylesheets/animate.css">
   <link href='http://fonts.googleapis.com/css?family=Luckiest+Guy' rel='stylesheet' type='text/css'>
 </head>
 <body ng-app="app">
   <div class="container">
-    <div class="page-header">
+    <div class="page-header fixed-top">
         <h1 class="text-danger">La lista de la compra</h1>
     </div>
       <nav>
-        <ul id="tab" class="nav nav-tabs" role="tablist">
-          <li id="uno"><a href="/">Inicio</a></li>
-          <li id="dos"><a href="#/newlist">Crear Lista</a></li>
-          <li id="tres"><a href="#/todas">Ver Listas</a></li>
+        <ul id="tab" class="nav nav-tabs fixed-top" role="tablist">
+          <li id="uno"><a ui-sref="home">Inicio</a></li>
+          <li id="dos"><a ui-sref="newlist">Crear Lista</a></li>
+          <li id="tres"><a ui-sref="todas">Ver Listas</a></li>
         </ul>
       </nav>
   </div>
   <div class="container">
-    <div ui-view></div>
+    <div id="titulito" class="difuminar" ui-view></div>
   </div>
 
   <!-- angularjs -->
@@ -33,6 +35,8 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
   <!-- angular ui.route -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+  <!-- angular animate -->
+  <script src="https://code.angularjs.org/1.2.25/angular-animate.js"></script>
   <!-- core, controllers and scripts -->
   <script src="./javascripts/app.js"></script>
   <script src="./javascripts/scripts.js"></script>

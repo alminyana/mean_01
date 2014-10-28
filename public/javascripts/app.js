@@ -1,9 +1,10 @@
 angular
   .module('app', [
-      'ui.router'
+      'ui.router',
+      'ngAnimate'
   ])
   .factory('Lista', function(){
-    
+
   })
   .config(['$urlRouterProvider', '$stateProvider', '$locationProvider', function($urlRouterProvider, $stateProvider, $locationProvider){
     $urlRouterProvider.otherwise('/');
