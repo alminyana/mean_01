@@ -1,3 +1,5 @@
+'use strict';
+
 angular
   .module('app')
   .controller('todasCtrl', ['$scope', '$http', '$stateParams', '$location', '$state', function($scope, $http, $stateParams, $location, $state) {

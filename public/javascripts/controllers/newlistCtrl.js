@@ -1,3 +1,5 @@
+'use strict';
+
 angular
   .module('app')
   .controller('newlistCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {

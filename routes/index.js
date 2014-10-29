@@ -1,3 +1,5 @@
+'use strict';
+
 var mongojs = require('mongojs');
 
 //localhost
