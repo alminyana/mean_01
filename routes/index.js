@@ -10,14 +10,14 @@ exports.guardarLista = function(req, res) {
   db.listas.insert(lista, function(err,doc){
 		res.json(doc);
 	});
-}
+};
 
 exports.todasListas = function (req, res) {
   db.listas.find(function(err, docs) {
     //console.log(docs);
     res.json(docs);
   });
-}
+};
 
 exports.borrarLista = function (req, res) {
   var id = req.params.id;
@@ -25,7 +25,7 @@ exports.borrarLista = function (req, res) {
   db.listas.remove({_id: mongojs.ObjectId(id)}, function (err, docs){
     res.json(docs);
   });
-}
+};
 
 exports.selectLista = function (req, res) {
   var iden = req.params.id;
@@ -34,7 +34,7 @@ exports.selectLista = function (req, res) {
     res.json(docs);
     //console.log(docs);
   });
-}
+};
 
 exports.updateLista = function (req, res) {
   var ide = req.params.id;
@@ -48,4 +48,4 @@ exports.updateLista = function (req, res) {
     function (err, docs) {
       res.json(docs);
     });
-}
+};

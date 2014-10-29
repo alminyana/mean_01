@@ -1,4 +1,4 @@
-'use strict';
+'Use strict';
 
 angular
   .module('app')
@@ -15,7 +15,7 @@ angular
       var objeto = {
         nombre: $scope.nombreProd,
         unid: $scope.unid
-      }
+      };
       $scope.items.push(objeto);
       //console.log(items);
       $scope.nombreProd = '';
@@ -26,7 +26,7 @@ angular
     $scope.eliminar = function(id) {
       items.splice(id, 1);
       $scope.numeroItems = $scope.items.length;
-    }
+    };
     $scope.numeroItems = items.length;
 
     //Guardar en BD una lista
@@ -41,7 +41,7 @@ angular
             //console.log(response);
             $location.path('/todas').replace();
         });
-    }
+    };
     //numero de listas en BD
     $scope.numeroDeListas = function () {
       $http.get('/servicioListas')
@@ -50,6 +50,6 @@ angular
           $scope.numeroListas = $scope.todas.length;
         });
 
-    }
+    };
     $scope.numeroDeListas();
   }]);

@@ -1,4 +1,4 @@
-'use strict';
+'Use strict';
 
 angular
   .module('app')
@@ -74,7 +74,7 @@ angular
     $scope.borrarProducto = function(id) {
       $scope.selec.items.splice(id,1);
       //console.log($scope.selec);
-    }
+    };
 
 
 
