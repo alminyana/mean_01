@@ -53,12 +53,12 @@
       </div>
     </div>
     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 fondogris">
-        <div class="panel panel-primary margen-superior difuminar" ng-show="nuevoTitulo">
+        <div class="panel panel-primary margen-superior difuminar nuevaFila" ng-show="nuevoTitulo">
           <div class="panel-heading">
             <h4 class="text-centered">{{nuevoTitulo}}</h4>
           </div>
           <br/>
-          <div ng-show="items[0].nombre">
+          <div ng-show="items[0].nombre" class="nuevaFila quitaFila">
             <table class="table table-responsive table-hover">
               <thead>
                 <tr>
@@ -68,7 +68,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr ng-repeat="item in items">
+                <tr ng-repeat="item in items" class="nuevaFila quitaFila">
                   <td>{{item.nombre}}</td>
                   <td>{{item.unid}}</td>
                   <td><button class="btn btn-xs btn-danger" ng-click="eliminar($index)">Borrar</button></td>

@@ -23,3 +23,28 @@
 .difuminar.ng-leave-active {
 	opacity:0;
 }
+
+
+.nuevaFila {
+ transition: 0.3s linear all;
+}
+
+.nuevaFila.ng-enter {
+	opacity: 0;
+}
+
+.nuevaFila.ng-enter-active {
+	opacity: 1;
+}
+
+.quitaFila {
+ transition: 0.6s linear all;
+}
+
+.quitaFila.ng-leave {
+	opacity: 1;
+}
+
+.quitaFila.ng-leave-active {
+	opacity: 0;
+}
