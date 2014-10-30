@@ -1,5 +1,4 @@
-
-  <div class="row" id="pepo">
+<div class="row-fluid">
     <section class="hidden-xs col-sm-2 col-md-2 col-lg-2 lateral">
       <ul class="nav nav-pills nav-stacked">
         <li class="active">
@@ -54,7 +53,7 @@
       </div>
     </div>
     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 fondogris">
-        <div class="panel panel-primary margen-superior" ng-show="nuevoTitulo">
+        <div class="panel panel-primary margen-superior difuminar" ng-show="nuevoTitulo">
           <div class="panel-heading">
             <h4 class="text-centered">{{nuevoTitulo}}</h4>
           </div>
@@ -70,7 +69,7 @@
               </thead>
               <tbody>
                 <tr ng-repeat="item in items">
-                  <td>{{item.nombre}} : {{$index}}</td>
+                  <td>{{item.nombre}}</td>
                   <td>{{item.unid}}</td>
                   <td><button class="btn btn-xs btn-danger" ng-click="eliminar($index)">Borrar</button></td>
                 </tr>

@@ -48,6 +48,7 @@ angular
         .success(function (response){
           $scope.obtenerTodas();
         });
+        $state.go('todas',{},{reload: true});
       };
     //guardar cambios de una lista en BD
     $scope.guardarCanvis = function (id) {
@@ -75,8 +76,6 @@ angular
       $scope.selec.items.splice(id,1);
       //console.log($scope.selec);
     };
-
-
 
     //obtener todas las listas de la BD
     $scope.obtenerTodas();

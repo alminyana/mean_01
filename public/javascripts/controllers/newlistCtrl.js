@@ -2,7 +2,7 @@
 
 angular
   .module('app')
-  .controller('newlistCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
+  .controller('newlistCtrl', ['$scope', '$http', '$location', '$state', function($scope, $http, $location, $state) {
     $scope.unid = 1;
     $scope.title = "Nueva Lista";
     var items = [];
@@ -38,8 +38,8 @@ angular
       console.log(lista);
       $http.post('/servicioListas', lista)
         .success(function(response) {
-            //console.log(response);
-            $location.path('/todas').replace();
+            //$location.path('/todas').reload();
+            $state.go('todas',{},{reload: true});
         });
     };
     //numero de listas en BD
