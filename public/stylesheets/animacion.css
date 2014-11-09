@@ -25,8 +25,14 @@
 }
 
 
+
+/* añadir fila en vista newlist*/
 .nuevaFila {
- transition: 0.3s linear all;
+	-webkit-transition: 0.3s linear all;
+	-moz-transition: 0.3s linear all;
+	-ms-transition: 0.3s linear all;
+	-o-transition: 0.3s linear all;
+	transition: 0.3s linear all;
 }
 
 .nuevaFila.ng-enter {
@@ -37,8 +43,14 @@
 	opacity: 1;
 }
 
+
+/* borrar fila en vista newlist*/
 .quitaFila {
- transition: 0.6s linear all;
+ -webkit-transition: 0.3s linear all;
+	-moz-transition: 0.3s linear all;
+	-ms-transition: 0.3s linear all;
+	-o-transition: 0.3s linear all;
+	transition: 0.3s linear all;
 }
 
 .quitaFila.ng-leave {
