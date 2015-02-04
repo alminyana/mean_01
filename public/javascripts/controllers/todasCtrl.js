@@ -1,8 +1,11 @@
 'Use strict';
+////////////////////////////////////
+//   CONTROLADOR vista VER LISTAS //
+////////////////////////////////////
 
 angular
   .module('app')
-  .controller('todasCtrl', ['$scope', '$http', '$stateParams', '$location', '$state', function($scope, $http, $stateParams, $location, $state) {
+  .controller('todasCtrl', ['$scope', 'apiListas', '$http', '$stateParams', '$location', '$state', function($scope, apiListas, $http, $stateParams, $location, $state) {
 
     $scope.vistasTitulo = "Mis Listassss";
     $scope.renderListasResponse = function(response) {
@@ -13,19 +16,17 @@ angular
       $scope.selec = response;
     };
     $scope.obtenerTodas = function() {
-      $http.get('/servicioListas')
-        .success($scope.renderListasResponse);
+      var promise = apiListas.getListas();
+      promise.then($scope.renderListasResponse);
     };
 
     //obtener el id seleccionado
     //$scope.listaSeleccionada = $stateParams.lista;
+
     //obtener lista de la bd con el id de lista seleccionada
     $scope.obtenerUna = function (id) {
-      $http.get('/servicioListas/'+id)
-        .success(function (response) {
-          //console.log(response);
-          $scope.selec = response;
-        });
+      var promesa = apiListas.getList(id);
+      promesa.then($scope.renderUnaListaResponse);
     };
 
     //obtener la lista del array de listas ya leido por metodo obtenerTodas()
@@ -44,12 +45,19 @@ angular
     */
     //borrar lista de la BD
     $scope.borrar = function(id) {
-      $http.delete('/servicioListas/'+id)
+      var promesa = apiListas.deleteList(id);
+      promesa.then(function(){
+        $scope.obtenerTodas()
+        $state.go('todas',{},{reload: true});
+      });
+          
+      /*$http.delete('/servicioListas/'+id)
         .success(function (response){
           $scope.obtenerTodas();
         });
         $state.go('todas',{},{reload: true});
-      };
+      ;*/
+      }
     //guardar cambios de una lista en BD
     $scope.guardarCanvis = function (id) {
       //console.log(id);
@@ -57,10 +65,14 @@ angular
         titulo: $scope.selec.titulo,
         items: $scope.selec.items
       };
-      $http.put('/servicioListas/'+id, lista_para_update)
-        .success(function (response){
-          $scope.obtenerTodas();
-        });
+      var promesa = apiListas.updateList(id, lista_para_update);
+      promesa.then($scope.obtenerTodas());
+
+
+      // $http.put('/servicioListas/'+id, lista_para_update)
+      //   .success(function (response){
+      //     $scope.obtenerTodas();
+      //   });
         $state.go('todas',{},{reload: true});
 
       //$location.path('/todas').replace();
@@ -79,4 +91,6 @@ angular
 
     //obtener todas las listas de la BD
     $scope.obtenerTodas();
+
+
   }]);
